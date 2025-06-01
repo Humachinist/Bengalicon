@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bengalicon</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="fonts/bnicon.css">
+  <script src="bnicon.js"></script>
+</head>
+<body>
+  <header id="navbar" class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.svg" alt="Bangla Logo" />
+        </a>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="https://service.bangla.gov.bd" target="_blank" rel="noopener noreferrer">Services</a>
+        <a href="https://bangla.gov.bd" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+    </div>
+  </header>
+  
+<main class="fade-in delay-0">
+
+    <!-- Animate this section -->
+  <!-- Icon Section -->
+  <section class="icon-bar">
+    <div class="icon-container">
+      <a href="https://ocr.bangla.gov.bd/" class="icon-item" target="_blank" rel="noopener noreferrer">
+        <div class="icon-box"><img src="images/ocr.svg" alt="OCR" /></div>
+        <p class="icon-label">Borno</p>
+      </a>
+      <a href="https://spell.bangla.gov.bd/" class="icon-item" target="_blank" rel="noopener noreferrer">
+        <div class="icon-box"><img src="images/sothik.svg" alt="spellcheck" /></div>
+        <p class="icon-label">Sothik</p>
+      </a>
+      <a href="https://read.bangla.gov.bd/" class="icon-item" target="_blank" rel="noopener noreferrer">
+        <div class="icon-box"><img src="images/uccharon.svg" alt="TTS" /></div>
+        <p class="icon-label">Uccharon</p>
+      </a>
+      <a href="https://voice.bangla.gov.bd/" class="icon-item" target="_blank" rel="noopener noreferrer">
+        <div class="icon-box"><img src="images/kotha.svg" alt="Voice" /></div>
+        <p class="icon-label">Kotha</p>
+      </a>
+      <a href="https://fontengine.bangla.gov.bd/" class="icon-item" target="_blank" rel="noopener noreferrer">
+        <div class="icon-box"><img src="images/rupantor.svg" alt="Font Engine" /></div>
+        <p class="icon-label">Font-engine</p>
+      </a>
+    </div>
+  </section>
+<div id="page-content" class="fade-in delay-1">
+<!-- Hero + Footer Wrapper -->
+  <div class="hero-wrapper">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Bengalicon Webfont</h1>
+      <p>Your web developement experience redefined.</p>
+     
+ <!-- Search Box Section -->
+
+	 <div class="cta-container">
+        <button id="exploreBtn" class="cta-button">Search Now</button>
+        <div id="searchBox" class="search-box">
+  <i class="bn-regular bn-search search-icon"></i>
+  <input id="search-box" type="text" placeholder="Icon name..." />
+</div>
+      </div>
+    </div>
+	
+<div id="ico-grid" class="ico-grid"></div>
+
+  <script src="bnicon.js"></script>
+  </section>
+  </div>
+  </div>
+ 
+  </main>
+
+  <script>
+   // content animation
+    if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0); // Scroll to top immediately
+ window.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0); // Ensure top of page
+
+    const content = document.getElementById('page-content');
+    content.classList.add('animate-up');
+
+    // Trigger the animation
+    void content.offsetWidth; // Reflow
+    setTimeout(() => {
+      content.classList.add('show');
+    }, 100);
+  });
+  
+    // Toggle mobile nav
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+
+    // Highlight active nav link
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      link.addEventListener('click', function () {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Icon label click highlight
+    const iconItems = document.querySelectorAll('.icon-item');
+    iconItems.forEach(item => {
+      item.addEventListener('click', () => {
+        iconItems.forEach(i => i.classList.remove('clicked'));
+        item.classList.add('clicked');
+      });
+    });
+
+    // Toggle search box
+    const exploreBtn = document.getElementById('exploreBtn');
+    const searchBox = document.getElementById('searchBox');
+
+    exploreBtn.addEventListener('click', () => {
+      exploreBtn.classList.add('hidden');
+      searchBox.classList.add('active');
+      setTimeout(() => {
+        searchBox.querySelector('input').focus();
+      }, 400);
+    });
+
+    document.addEventListener('click', function (e) {
+      const isClickInside = searchBox.contains(e.target) || exploreBtn.contains(e.target);
+      if (!isClickInside) {
+        searchBox.classList.remove('active');
+        exploreBtn.classList.remove('hidden');
+      }
+    });
+	
+	//Icon Grid 
+	const icoGrid = document.getElementById("ico-grid");
+  const searchInput = document.getElementById("search-box");
+
+  let icons = [];
+
+  fetch("images/icons/icons.json")
+    .then(res => res.json())
+    .then(data => {
+      icons = data;
+      renderIcons();
+    })
+    .catch(error => {
+      console.error("Failed to load icons.json:", error);
+    });
+
+  function renderIcons(filter = "") {
+    icoGrid.innerHTML = "";
+
+    icons
+      .filter(name => name.toLowerCase().includes(filter.toLowerCase()))
+      .forEach(name => {
+        const icoBox = document.createElement("div");
+        icoBox.className = "ico-item";
+        icoBox.title = name;
+        icoBox.innerHTML = `
+          <img src="images/icons/${name}.svg" alt="${name}" />
+          <div class="ico-label">${name}</div>`;
+        icoBox.onclick = () => {
+          window.open(`preview.html?icon=${name}`, "_blank");
+        };
+        icoGrid.appendChild(icoBox);
+      });
+  }
+
+  searchInput.addEventListener("input", e => renderIcons(e.target.value));
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const main = document.querySelector("main");
+    const pageContent = document.getElementById("page-content");
+
+    // Start <main> animation
+    main.classList.add("fade-in");
+
+    // Delay the next animation
+    setTimeout(() => {
+      pageContent.classList.add("fade-in");
+    }, 600); // matches duration of first animation
+  });
+	
+  </script>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="site-footer">
+    <img src="images/footer.svg" alt="Footer Logo" class="footer-logo" />
+    <hr class="footer-divider" />
+    <p class="footer-text">© 2025 Bangla. All rights reserved.</p>
+  </footer>
+</body>
+</html>

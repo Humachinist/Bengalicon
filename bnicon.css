@@ -1,0 +1,99 @@
+/* Coded by Mohammad Shahidul Islam */
+
+@font-face {
+  font-family: 'bengalicon';
+  src: url('../fonts/bnicon-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bengalicon';
+  src: url('../fonts/bnicon-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+[class^="bn-"], [class*=" bn-"] {
+  font-family: 'bengalicon';
+  font-style: normal;
+  display: inline-block;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.bn-regular { font-weight: 400; }
+.bn-bold { font-weight: 700; }
+
+.bn-ai::before { content: "\e001"; }
+.bn-amazon-solid::before { content: "\e002"; }
+.bn-amazon-stroke::before { content: "\e003"; }
+.bn-android::before { content: "\e004"; }
+.bn-apple-store::before { content: "\e005"; }
+.bn-apple::before { content: "\e006"; }
+.bn-cancel::before { content: "\e007"; }
+.bn-cart::before { content: "\e008"; }
+.bn-chrome::before { content: "\e009"; }
+.bn-dashboard::before { content: "\e00a"; }
+.bn-dataset::before { content: "\e00b"; }
+.bn-delete::before { content: "\e00c"; }
+.bn-doc::before { content: "\e00d"; }
+.bn-document::before { content: "\e00e"; }
+.bn-download-box::before { content: "\e00f"; }
+.bn-download::before { content: "\e010"; }
+.bn-facebook::before { content: "\e011"; }
+.bn-firefox::before { content: "\e012"; }
+.bn-font-converter::before { content: "\e013"; }
+.bn-font::before { content: "\e014"; }
+.bn-globe::before { content: "\e015"; }
+.bn-google-doc::before { content: "\e016"; }
+.bn-google-sheet::before { content: "\e017"; }
+.bn-google::before { content: "\e018"; }
+.bn-home::before { content: "\e019"; }
+.bn-instagram::before { content: "\e01a"; }
+.bn-instagram-box::before { content: "\e01b"; }
+.bn-link-clip::before { content: "\e01c"; }
+.bn-link::before { content: "\e01d"; }
+.bn-location::before { content: "\e01e"; }
+.bn-login::before { content: "\e01f"; }
+.bn-Login-round::before { content: "\e020"; }
+.bn-love::before { content: "\e021"; }
+.bn-mail::before { content: "\e022"; }
+.bn-menu-cirle::before { content: "\e023"; }
+.bn-menu-bar::before { content: "\e024"; }
+.bn-menu-round::before { content: "\e025"; }
+.bn-mic-off::before { content: "\e026"; }
+.bn-mic::before { content: "\e027"; }
+.bn-headphone::before { content: "\e028"; }
+.bn-mp3::before { content: "\e029"; }
+.bn-ms-store::before { content: "\e02a"; }
+.bn-notification-off::before { content: "\e02b"; }
+.bn-notification::before { content: "\e02c"; }
+.bn-ocr::before { content: "\e02d"; }
+.bn-password::before { content: "\e02e"; }
+.bn-pdf::before { content: "\e02f"; }
+.bn-play::before { content: "\e030"; }
+.bn-playstore::before { content: "\e031"; }
+.bn-publication::before { content: "\e032"; }
+.bn-search::before { content: "\e033"; }
+.bn-settings::before { content: "\e034"; }
+.bn-share::before { content: "\e035"; }
+.bn-speaker::before { content: "\e036"; }
+.bn-spell-check::before { content: "\e037"; }
+.bn-star::before { content: "\e038"; }
+.bn-support::before { content: "\e039"; }
+.bn-like::before { content: "\e03a"; }
+.bn-translator::before { content: "\e03b"; }
+.bn-txt::before { content: "\e03c"; }
+.bn-user::before { content: "\e03d"; }
+.bn-eye::before { content: "\e03e"; }
+.bn-eye-off::before { content: "\e03f"; }
+.bn-volume-down::before { content: "\e040"; }
+.bn-volume-high::before { content: "\e041"; }
+.bn-Volume-low::before { content: "\e042"; }
+.bn-mute::before { content: "\e043"; }
+.bn-volume-up::before { content: "\e044"; }
+.bn-wav::before { content: "\e045"; }
+.bn-windows::before { content: "\e046"; }
+.bn-youtube::before { content: "\e047"; }
+.bn-zip::before { content: "\e048"; }
+
