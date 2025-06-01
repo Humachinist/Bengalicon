@@ -122,6 +122,32 @@ body {
       margin: 0 auto;
       line-height: 0.25;
     }
+	
+	@media (max-width: 768px) {
+  .preview-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview-left {
+    width: 150px;
+    height: 150px;
+    font-size: 60px;
+  }
+
+  .preview-right {
+    width: 90%;
+    text-align: left;
+  }
+
+  .code-box {
+    max-width: 100%;
+    overflow-x: auto;
+    word-break: break-word;
+    white-space: pre;
+  }
+}
+
 
     /* Optional: add small smooth scroll or fade effects if needed */
     /* Add cursor pointer on clickable elements */
@@ -209,21 +235,21 @@ body {
 
    <script>
     const params = new URLSearchParams(window.location.search);
-const name = (params.get('icon') || '').toLowerCase(); // ✅ Always lowercase
+    const name = params.get('icon'); // ✅ Matches index.html
 
-const iconClass = `bn-regular bn-${name}`;
-const iconPreview = document.getElementById('icon-preview');
-const htmlBox = document.getElementById('html-code');
-const svgBox = document.getElementById('svg-code');
+    const iconClass = `bn-regular bn-${name}`;
+    const iconPreview = document.getElementById('icon-preview');
+    const htmlBox = document.getElementById('html-code');
+    const svgBox = document.getElementById('svg-code');
 
-// Set the icon
-iconPreview.className = iconClass;
+    // Set the icon
+    iconPreview.className = iconClass;
 
-// Show HTML snippet
-htmlBox.textContent = `<i class="${iconClass}"></i>`;
+    // Show HTML snippet
+    htmlBox.textContent = `<i class="${iconClass}"></i>`;
 
-// Fetch SVG file
-const svgContent = bniconSVGs[name];
+    // Fetch SVG file
+    const svgContent = bniconSVGs[name];
 svgBox.textContent = svgContent ? svgContent : `<!-- SVG not found -->`;
 
 
