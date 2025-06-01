@@ -365,10 +365,8 @@ main {
 .ico-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-  gap: 26px;
+  gap: 16px;
   padding: 3rem 2rem;
-  padding-left: 23rem;
-  padding-right: 23rem;
   justify-items: center;
 }
 	
