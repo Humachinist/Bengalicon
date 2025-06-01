@@ -365,8 +365,9 @@ main {
 .ico-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-  gap: 16px;
+  gap: 26px;
   padding: 3rem 2rem;
+  
   justify-items: center;
 }
 	
@@ -382,8 +383,8 @@ main {
   cursor: pointer;
   background-color: #ffffff; /* optional: box background */
   box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* subtle shadow */
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  transition: transform 0.3s ease, filter 0.3s ease;
+ transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+
 }
 
 .ico-item img {
@@ -421,6 +422,13 @@ main {
 
 
 /* Responsive */
+
+@media (min-width: 1200px) {
+  .ico-grid {
+    padding: 3rem 5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -438,8 +446,8 @@ main {
   }
 
   .menu-toggle {
-    display: block;
-  }
+  display: none !important;
+}
 
   .icon-container {
     gap: 40px;
