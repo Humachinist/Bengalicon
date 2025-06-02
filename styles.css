@@ -422,12 +422,23 @@ main {
 
 
 /* Responsive */
+@media (min-width: 1920px) {
+  .ico-grid {
+   gap: 26px;
+  padding: 3rem 2rem;
+  padding-left: 23rem;
+  padding-right: 23rem;
+  justify-items: center;
+  }
+}
 
 @media (min-width: 1200px) {
   .ico-grid {
-    padding: 3rem 5rem;
-	  padding-left: 23px;
-	  padding-right: 23px;
+   gap: 26px;
+  padding: 3rem 2rem;
+  padding-left: 23rem;
+  padding-right: 23rem;
+  justify-items: center;
   }
 }
 
