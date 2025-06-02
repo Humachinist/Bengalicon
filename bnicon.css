@@ -1,20 +1,35 @@
 /* Coded by Mohammad Shahidul Islam */
 
 @font-face {
-  font-family: 'bengalicon';
+  font-family: 'bnicon';
   src: url('../fonts/bnicon-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
-  font-family: 'bengalicon';
+  font-family: 'bnicon';
+  src: url('../fonts/bnicon-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bnicon';
+  src: url('../fonts/bnicon-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bnicon';
   src: url('../fonts/bnicon-bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
 }
 
 [class^="bn-"], [class*=" bn-"] {
-  font-family: 'bengalicon';
+  font-family: 'bnicon';
   font-style: normal;
   display: inline-block;
   text-rendering: auto;
@@ -22,6 +37,8 @@
 }
 
 .bn-regular { font-weight: 400; }
+.bn-medium { font-weight: 500; }
+.bn-semibold { font-weight: 600; }
 .bn-bold { font-weight: 700; }
 
 .bn-ai::before { content: "\e001"; }
