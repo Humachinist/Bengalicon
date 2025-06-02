@@ -237,7 +237,7 @@ body {
     const params = new URLSearchParams(window.location.search);
     const name = params.get('icon'); // ✅ Matches index.html
 
-    const iconClass = `bn-regular bn-${name}`;
+    const iconClass = `bn-regular bn-${name?.toLowerCase()}`;
     const iconPreview = document.getElementById('icon-preview');
     const htmlBox = document.getElementById('html-code');
     const svgBox = document.getElementById('svg-code');
@@ -249,7 +249,8 @@ body {
     htmlBox.textContent = `<i class="${iconClass}"></i>`;
 
     // Fetch SVG file
-    const svgContent = bniconSVGs[name];
+   const svgContent = bniconSVGs[name?.toLowerCase()];
+const svgContent = bniconSVGs[name];
 svgBox.textContent = svgContent ? svgContent : `<!-- SVG not found -->`;
 
 
