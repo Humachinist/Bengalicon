@@ -426,6 +426,8 @@ main {
 @media (min-width: 1200px) {
   .ico-grid {
     padding: 3rem 5rem;
+	  padding-left: 23px;
+	  padding-right: 23px;
   }
 }
 
