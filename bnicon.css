@@ -106,7 +106,7 @@
 .bn-eye-off::before { content: "\e03f"; }
 .bn-volume-down::before { content: "\e040"; }
 .bn-volume-high::before { content: "\e041"; }
-.bn-Volume-low::before { content: "\e042"; }
+.bn-volume-low::before { content: "\e042"; }
 .bn-mute::before { content: "\e043"; }
 .bn-volume-up::before { content: "\e044"; }
 .bn-wav::before { content: "\e045"; }
