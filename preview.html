@@ -237,7 +237,7 @@ body {
     const params = new URLSearchParams(window.location.search);
     const name = params.get('icon'); // ✅ Matches index.html
 
-    const iconClass = `bn-regular bn-${name?.toLowerCase()}`;
+    const iconClass = `bn-regular bn-${name}`;
     const iconPreview = document.getElementById('icon-preview');
     const htmlBox = document.getElementById('html-code');
     const svgBox = document.getElementById('svg-code');
